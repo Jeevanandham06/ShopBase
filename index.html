@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopBase - Seller Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+        @media (max-width: 768px) {
+            .stats-cards {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">ShopBase</div>
+            <div class="nav-links">
+                <a href="#">Dashboard</a>
+                <a href="#">Products</a>
+                <a href="#">Orders</a>
+                <a href="#">Settings</a>
+            </div>
+        </header>
+
+        <h1 class="dashboard-title">Seller Dashboard</h1>
+
+        <div class="stats-cards">
+            <div class="card today-orders">
+                <h3>Today Orders</h3>
+                <div class="value">24</div>
+            </div>
+            <div class="card stock-alerts">
+                <h3> Alerts</h3>
+                <div class="value">5</div>
+            </div>
+            <div class="card total-revenue">
+                <h3>Total income</h3>
+                <div class="value">2,847</div>
+            </div>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="section">
+                <h2 class="section-title">Recent Orders</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD-7842</td>
+                            <td>setve Smith</td>
+                            <td>Oct 12, 2023</td>
+                            <td>128.50</td>
+                            <td><span class="status completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-7841</td>
+                            <td>mitchel Johnson</td>
+                            <td>Oct 12, 2023</td>
+                            <td>$89.99</td>
+                            <td><span class="status shipped">Shipped</span></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-7840</td>
+                            <td>Michael strac</td>
+                            <td>Oct 11, 2023</td>
+                            <td>245.75</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-7839</td>
+                            <td>Emily </td>
+                            <td>Oct 11, 2023</td>
+                            <td>67.30</td>
+                            <td><span class="status completed">Completed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Stock Alerts</h2>
+                <div class="alert warning">
+                    <strong>Wireless Earbuds</strong> - Only 3 items left in stock
+                </div>
+                <div class="alert danger">
+                    <strong>Smart Watch</strong> - Out of stock
+                </div>
+                <div class="alert warning">
+                    <strong>Phone Case</strong> - Only 5 items left in stock
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Order Summary</h2>
+                <div class="order-summary">
+                    <div class="order-item">
+                        <div class="order-info">
+                            <span class="order-id">#ORD-7838</span>
+                            <span class="order-date">Oct 10, 2023</span>
+                        </div>
+                        <div class="order-amount">156.80</div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-info">
+                            <span class="order-id">#ORD-7837</span>
+                            <span class="order-date">Oct 10, 2023</span>
+                        </div>
+                        <div class="order-amount">89.99</div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-info">
+                            <span class="order-id">#ORD-7836</span>
+                            <span class="order-date">Oct 9, 2023</span>
+                        </div>
+                        <div class="order-amount">210.45</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
