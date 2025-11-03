@@ -4,135 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopBase - Seller Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-       
-        @media (max-width: 768px) {
-            .stats-cards {
-                flex-direction: column;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">ShopBase</div>
-            <div class="nav-links">
-                <a href="#">Dashboard</a>
-                <a href="#">Products</a>
-                <a href="#">Orders</a>
-                <a href="#">Settings</a>
-            </div>
-        </header>
-
-        <h1 class="dashboard-title">Seller Dashboard</h1>
-
-        <div class="stats-cards">
-            <div class="card today-orders">
-                <h3>Today Orders</h3>
-                <div class="value">24</div>
-            </div>
-            <div class="card stock-alerts">
-                <h3> Alerts</h3>
-                <div class="value">5</div>
-            </div>
-            <div class="card total-revenue">
-                <h3>Total income</h3>
-                <div class="value">2,847</div>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">ShopBase</div>
+                <div class="user-info">
+                    <div>Welcome, Seller!</div>
+                    <div class="user-avatar">S</div>
+                </div>
             </div>
         </div>
-
-        <div class="dashboard-content">
-            <div class="section">
-                <h2 class="section-title">Recent Orders</h2>
-                <table>
+    </header>
+    
+    <div class="container">
+        <div class="dashboard">
+            
+            <div class="card order-summary">
+                <div class="card-header">
+                    <div class="card-title">Daily Order Summary</div>
+                    <div>Today: <span id="current-date"></span></div>
+                </div>
+                
+                <div class="summary-stats">
+                    <div class="stat-card">
+                        <div class="stat-label">Total Orders</div>
+                        <div class="stat-value">24</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Pending</div>
+                        <div class="stat-value">8</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Completed</div>
+                        <div class="stat-value">16</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Revenue</div>
+                        <div class="stat-value">$1,240</div>
+                    </div>
+                </div>
+                
+               
+                <div class="chart-container">
+                    <div class="chart-bar">
+                        <div class="bar" style="height: 70%;">
+                            <div class="bar-value" style="position: absolute; top: -20px; left: 0; right: 0; text-align: center;">16</div>
+                        </div>
+                        <div class="bar" style="height: 30%;">
+                            <div class="bar-value" style="position: absolute; top: -20px; left: 0; right: 0; text-align: center;">8</div>
+                        </div>
+                    </div>
+                    <div class="bar-labels" style="display: flex; justify-content: space-around;">
+                        <div class="bar-label">Completed</div>
+                        <div class="bar-label">Pending</div>
+                    </div>
+                </div>
+            </div>
+            
+        
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Stock Alerts</div>
+                    <button class="btn btn-secondary">View All</button>
+                </div>
+                
+                <div class="alert-list">
+                    <div class="alert-item">
+                        <div class="alert-product">Wireless Earbuds Pro</div>
+                        <div class="alert-stock">Low Stock (5)</div>
+                    </div>
+                    <div class="alert-item">
+                        <div class="alert-product">Smart Fitness Watch</div>
+                        <div class="alert-stock">Out of Stock</div>
+                    </div>
+                    <div class="alert-item">
+                        <div class="alert-product">Phone Case - Blue</div>
+                        <div class="alert-stock">Low Stock (3)</div>
+                    </div>
+                    <div class="alert-item">
+                        <div class="alert-product">USB-C Charging Cable</div>
+                        <div class="alert-stock">Low Stock (7)</div>
+                    </div>
+                </div>
+            </div>
+            
+     
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Product Overview</div>
+                    <button class="btn btn-primary">Add Product</button>
+                </div>
+                
+                <table class="product-table">
                     <thead>
                         <tr>
-                            <th>Order ID</th>
-                            <th>Customer</th>
-                            <th>Date</th>
-                            <th>Amount</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Stock</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>#ORD-7842</td>
-                            <td>setve Smith</td>
-                            <td>Oct 12, 2023</td>
-                            <td>128.50</td>
-                            <td><span class="status completed">Completed</span></td>
+                            <td>Wireless Earbuds Pro</td>
+                            <td>$79.99</td>
+                            <td class="stock-low">5</td>
+                            <td>Active</td>
                         </tr>
                         <tr>
-                            <td>#ORD-7841</td>
-                            <td>mitchel Johnson</td>
-                            <td>Oct 12, 2023</td>
-                            <td>$89.99</td>
-                            <td><span class="status shipped">Shipped</span></td>
+                            <td>Smart Fitness Watch</td>
+                            <td>$129.99</td>
+                            <td class="stock-low">0</td>
+                            <td>Out of Stock</td>
                         </tr>
                         <tr>
-                            <td>#ORD-7840</td>
-                            <td>Michael strac</td>
-                            <td>Oct 11, 2023</td>
-                            <td>245.75</td>
-                            <td><span class="status pending">Pending</span></td>
+                            <td>Phone Case - Blue</td>
+                            <td>$19.99</td>
+                            <td class="stock-low">3</td>
+                            <td>Active</td>
                         </tr>
                         <tr>
-                            <td>#ORD-7839</td>
-                            <td>Emily </td>
-                            <td>Oct 11, 2023</td>
-                            <td>67.30</td>
-                            <td><span class="status completed">Completed</span></td>
+                            <td>Bluetooth Speaker</td>
+                            <td>$49.99</td>
+                            <td class="stock-ok">42</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>USB-C Charging Cable</td>
+                            <td>$14.99</td>
+                            <td class="stock-low">7</td>
+                            <td>Active</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
-            <div class="section">
-                <h2 class="section-title">Stock Alerts</h2>
-                <div class="alert warning">
-                    <strong>Wireless Earbuds</strong> - Only 3 items left in stock
+            
+ 
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Recent Activity</div>
                 </div>
-                <div class="alert danger">
-                    <strong>Smart Watch</strong> - Out of stock
-                </div>
-                <div class="alert warning">
-                    <strong>Phone Case</strong> - Only 5 items left in stock
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Order Summary</h2>
-                <div class="order-summary">
-                    <div class="order-item">
-                        <div class="order-info">
-                            <span class="order-id">#ORD-7838</span>
-                            <span class="order-date">Oct 10, 2023</span>
-                        </div>
-                        <div class="order-amount">156.80</div>
+                
+                <div class="activity-list">
+                    <div class="alert-item">
+                        <div>New order #ORD-2456 received</div>
+                        <div style="font-size: 12px; color: #888;">2 hours ago</div>
                     </div>
-                    <div class="order-item">
-                        <div class="order-info">
-                            <span class="order-id">#ORD-7837</span>
-                            <span class="order-date">Oct 10, 2023</span>
-                        </div>
-                        <div class="order-amount">89.99</div>
+                    <div class="alert-item">
+                        <div>Product "Smart Fitness Watch" is out of stock</div>
+                        <div style="font-size: 12px; color: #888;">5 hours ago</div>
                     </div>
-                    <div class="order-item">
-                        <div class="order-info">
-                            <span class="order-id">#ORD-7836</span>
-                            <span class="order-date">Oct 9, 2023</span>
-                        </div>
-                        <div class="order-amount">210.45</div>
+                    <div class="alert-item">
+                        <div>Order #ORD-2451 marked as shipped</div>
+                        <div style="font-size: 12px; color: #888;">Yesterday</div>
+                    </div>
+                    <div class="alert-item">
+                        <div>New customer review for "Wireless Earbuds Pro"</div>
+                        <div style="font-size: 12px; color: #888;">2 days ago</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</body>
-</html>
